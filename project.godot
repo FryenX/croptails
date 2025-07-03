@@ -24,6 +24,15 @@ window/stretch/mode="viewport"
 window/stretch/aspect="keep_height"
 window/stretch/scale_mode="integer"
 
+[file_customization]
+
+folder_colors={
+"res://Tilesets/": "yellow",
+"res://assets/": "orange",
+"res://scenes/": "green",
+"res://scripts/": "pink"
+}
+
 [input]
 
 walk_up={
@@ -60,6 +69,12 @@ hit={
 , Object(InputEventJoypadButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"button_index":2,"pressure":0.0,"pressed":true,"script":null)
 ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="Ground"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Interactable"
 
 [rendering]
 
