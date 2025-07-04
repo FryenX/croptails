@@ -1,9 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://c5ht3m7irxofm"]
+[gd_scene load_steps=10 format=3 uid="uid://c5ht3m7irxofm"]
 
+[ext_resource type="Shader" uid="uid://ri2fnsa6a2e5" path="res://scenes/objects/shake.gdshader" id="1_f4wgc"]
 [ext_resource type="Texture2D" uid="uid://csmfmp7wxojwx" path="res://assets/game/objects/basic_grass_biom_things.png" id="1_lwbpo"]
 [ext_resource type="PackedScene" uid="uid://drrgqlbg1u0ud" path="res://scenes/components/hurt_component.tscn" id="2_sx6ol"]
 [ext_resource type="Script" uid="uid://bbo5uj0gnnwpl" path="res://scenes/objects/trees/large_tree.gd" id="2_wjqkr"]
 [ext_resource type="PackedScene" uid="uid://bcgb68dm115rk" path="res://scenes/components/damage_component.tscn" id="3_ivetc"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6vpey"]
+resource_local_to_scene = true
+shader = ExtResource("1_f4wgc")
+shader_parameter/shake_intensity = 0.0
+shader_parameter/shake_speed = 20.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_sx6ol"]
 atlas = ExtResource("1_lwbpo")
@@ -16,6 +23,7 @@ radius = 5.0
 size = Vector2(8, 11)
 
 [node name="LargeTree" type="Sprite2D"]
+material = SubResource("ShaderMaterial_6vpey")
 texture = SubResource("AtlasTexture_sx6ol")
 script = ExtResource("2_wjqkr")
 
@@ -26,6 +34,7 @@ position = Vector2(0, 10)
 shape = SubResource("CircleShape2D_ivetc")
 
 [node name="HurtComponent" parent="." instance=ExtResource("2_sx6ol")]
+tool = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtComponent"]
 position = Vector2(0, 8.5)
