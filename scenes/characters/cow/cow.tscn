@@ -3,8 +3,8 @@
 [ext_resource type="Texture2D" uid="uid://jj7b520vaipt" path="res://assets/game/characters/cow_sprites.png" id="1_ilrem"]
 [ext_resource type="Script" uid="uid://he5cxvd23lu" path="res://scenes/characters/cow/cow.gd" id="1_j7g5r"]
 [ext_resource type="Script" uid="uid://cuprj3yc4iwnb" path="res://scripts/state_machine/node_state_machine.gd" id="2_j7g5r"]
-[ext_resource type="Script" path="res://scenes/characters/npc_states/idle_state.gd" id="3_4jynl"]
-[ext_resource type="Script" path="res://scenes/characters/npc_states/walk_state.gd" id="4_cgos1"]
+[ext_resource type="Script" uid="uid://cqgo0ngx5klbd" path="res://scenes/characters/npc_states/idle_state.gd" id="3_4jynl"]
+[ext_resource type="Script" uid="uid://y0rm53eqmovm" path="res://scenes/characters/npc_states/walk_state.gd" id="4_cgos1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gsrfl"]
 atlas = ExtResource("1_ilrem")
@@ -71,7 +71,9 @@ shape = SubResource("CircleShape2D_4i5n1")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 navigation_layers = 2
+path_postprocessing = 1
 avoidance_enabled = true
+debug_enabled = true
 
 [node name="StaticMachine" type="Node" parent="." node_paths=PackedStringArray("initial_node_state")]
 script = ExtResource("2_j7g5r")
