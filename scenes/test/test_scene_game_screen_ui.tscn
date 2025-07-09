@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=4 uid="uid://d3rfpya2x0xck"]
+[gd_scene load_steps=5 format=4 uid="uid://d3rfpya2x0xck"]
 
+[ext_resource type="PackedScene" uid="uid://cqv3bifudnkg2" path="res://scenes/components/test_scene_enable_button_component.tscn" id="1_80361"]
 [ext_resource type="TileSet" uid="uid://4jvaac5m4e3d" path="res://Tilesets/game_tile_sets.tres" id="1_hgrk3"]
 [ext_resource type="PackedScene" uid="uid://dw5l2njn26nrs" path="res://scenes/characters/player/player.tscn" id="2_5rcop"]
 [ext_resource type="PackedScene" uid="uid://cfh7qn2g02tto" path="res://scenes/ui/game_screen.tscn" id="3_80361"]
 
 [node name="TestSceneTilemap" type="Node2D"]
+
+[node name="TestSceneEnableButtonComponent" parent="." instance=ExtResource("1_80361")]
 
 [node name="GameTileMap" type="Node2D" parent="."]
 
