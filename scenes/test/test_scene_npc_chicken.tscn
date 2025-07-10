@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://cr2dvk6pnwjac" path="res://scenes/characters/chicken/chicken.tscn" id="2_a4sac"]
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_6nbhr"]
-vertices = PackedVector2Array(332.008, 142.75, 345.172, 233.117, 282.133, 274.273, 208.703, 256.789, 190.148, 151.641, 254.898, 119.703)
+vertices = PackedVector2Array(332.008, 142.75, 345.172, 233.117, 281.977, 274.367, 204.906, 258.609, 189.898, 151.773, 254.898, 119.703)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4, 5)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(179, 146, 254, 109, 341, 135, 356, 238, 284, 285, 200, 265)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(179, 146, 254, 109, 341, 135, 356, 238, 284, 285, 196, 267)])
 
 [node name="TestSceneNPCChicken" type="Node2D"]
 y_sort_enabled = true
@@ -35,7 +35,7 @@ y_sort_enabled = true
 tile_set = ExtResource("1_ardmt")
 
 [node name="Player" parent="." instance=ExtResource("2_6nbhr")]
-position = Vector2(169, 211)
+position = Vector2(184, 198)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 
@@ -43,36 +43,19 @@ position = Vector2(169, 211)
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="Chickens"]
 navigation_polygon = SubResource("NavigationPolygon_6nbhr")
+navigation_layers = 4
 
 [node name="Chicken" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(244, 244)
+position = Vector2(307, 209)
 
 [node name="Chicken2" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(305, 169)
+position = Vector2(234, 204)
 
 [node name="Chicken3" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(244, 161)
+position = Vector2(237, 179)
 
 [node name="Chicken4" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(285, 186)
+position = Vector2(260, 197)
 
 [node name="Chicken5" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(233, 195)
-
-[node name="Chicken6" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(281, 220)
-
-[node name="Chicken7" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(274, 152)
-
-[node name="Chicken8" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(243, 219)
-
-[node name="Chicken9" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(317, 208)
-
-[node name="Chicken10" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(283, 248)
-
-[node name="Chicken11" parent="Chickens" instance=ExtResource("2_a4sac")]
-position = Vector2(263, 189)
+position = Vector2(257, 222)

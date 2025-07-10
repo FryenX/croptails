@@ -32,20 +32,24 @@ func get_cell_under_mouse() -> void:
 	local_cell_position =  tilled_soil_tilemap_layer.map_to_local(cell_position)
 	distance = player.global_position.distance_to(local_cell_position)
 	
-	print("mouse position: ", mouse_position, "cell position: ", cell_source_id)
-	print("distance: ", distance)
+	#print("mouse position: ", mouse_position, "cell position: ", cell_source_id)
+	#print("distance: ", distance)
 	
 func add_crop() -> void:
 	if distance < 20.0:
-		if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
-			var corn_instance = corn_plant_scene.instantiate() as Node2D
-			corn_instance.global_position = local_cell_position
-			get_parent().find_child("CropFields").add_child(corn_instance)
-		
-		elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
-			var tomato_instance = tomato_plant_scene.instantiate() as Node2D
-			tomato_instance.global_position = local_cell_position
-			get_parent().find_child("CropFields").add_child(tomato_instance)
+		var tile_id = tilled_soil_tilemap_layer.get_cell_source_id(cell_position)
+		if tile_id != -1:  # -1 means no tile at that cell
+			var crop_instance: Node2D
+
+			if ToolManager.selected_tool == DataTypes.Tools.PlantCorn:
+				crop_instance = corn_plant_scene.instantiate() as Node2D
+			elif ToolManager.selected_tool == DataTypes.Tools.PlantTomato:
+				crop_instance = tomato_plant_scene.instantiate() as Node2D
+			else:
+				return  # Tool not supported
+
+			crop_instance.global_position = local_cell_position
+			get_parent().find_child("CropFields").add_child(crop_instance)
 
 func remove_crop() -> void:
 	if distance < 20.0:
