@@ -18,4 +18,4 @@ func _load_data(window: Window) -> void:
 	
 	if scene_node != null:
 		var tilemap_layer: TileMapLayer = scene_node as TileMapLayer
-		tilemap_layer.set_cells_terrain_connect(tilemap_layer_used_cells, terrain_set, true)
+		tilemap_layer.set_cells_terrain_connect(tilemap_layer_used_cells, terrain_set, terrain, true) 
